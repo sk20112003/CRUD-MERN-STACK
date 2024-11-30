@@ -7,6 +7,23 @@ app.get('/',(req,res)=>{
 });
 
 
+app.get('/movies',()=>{
+
+});
+
+app.post('/movies',()=>{
+    
+});
+
+app.put('/movies/:id',()=>{
+
+})
+
+app.delete('/movies/:id',()=>{
+
+})
+
+
 
 app.listen(PORT,()=>{
     console.log(`The Server Running at http://localhost:${PORT}`);
