@@ -1,30 +1,12 @@
-import express from "express"
+import express from "express";
+import moviRoute from "./routes/movies.route.js"
+import connectDB from "./lib/db.js";
 const app=express();
-const PORT=4000;
+const port=6000;
 
-app.get('/',(req,res)=>{
-      res.json({msg:"Hellow Students"});
-});
-
-
-app.get('/movies',()=>{
-
-});
-
-app.post('/movies',()=>{
-    
-});
-
-app.put('/movies/:id',()=>{
-
-})
-
-app.delete('/movies/:id',()=>{
-
-})
-
-
-
-app.listen(PORT,()=>{
-    console.log(`The Server Running at http://localhost:${PORT}`);
+app.use(express.json());
+app.use('/movies',moviRoute );
+app.listen(port,()=>{
+    console.log(`The Server Running at http://localhost:${port}`);
+    connectDB();
 });
